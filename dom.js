@@ -27,7 +27,6 @@ let tg = document.querySelector('#target')
 _.out.end('#target,.target', 'a,b, d')
 _.in.end(tg, _.dom.b)
 _.out.start('.target > ul, #target-2 ', _.dom._2)
-_.in.start(tg, 'd,b')
 _.in.start('.target', 0, '<h1><code>E!</code></h1>')
 
 console.log(_)
