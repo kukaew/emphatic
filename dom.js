@@ -17,7 +17,7 @@ _.dom.__=(m,e,e2,e3)=>
 'afterBegin.beforeEnd.beforeBegin.afterEnd'.split('.').forEach(m=>_[m]=(e,e2,e3)=>_.dom.__(m,e,e2,e3))
 
 //_______________________test
-	//* _.afterBegin||beforeEnd||beforeBegin||afterEnd.(target,element)
+	//* _.afterBegin||beforeEnd||beforeBegin||afterEnd.(targets,elements||0,code)  
 
 _.dom._('#dom')
 
@@ -27,8 +27,6 @@ _.dom['b']
 	.style.textShadow = '2px 1px #f33'
 _.dom._2
 	.style.color = 'red'
-
-
 
 _.afterEnd('.target', 'a,d, b')
 _.beforeBegin(_.dom._2, _.dom.b)
