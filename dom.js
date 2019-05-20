@@ -4,7 +4,7 @@ let _={}
 
 //_______________________code
 
-_.dom={},_.dom._=(el,r)=>document.querySelectorAll(el+'>*').forEach((e,n)=>_.dom[e.getAttribute('_')||'_'+(n)]=!r?e:e.replace(/\r|\n|\t/g,''))
+_.dom={},_.dom._=el=>document.querySelectorAll(el+'>*').forEach((e,n)=>_.dom[e.getAttribute('_')||'_'+(n)]=e
 _.dom.__=(m,e,e2,e3)=>
 	typeof e=='object'
 		?typeof e2=='object'||e3
@@ -17,7 +17,7 @@ _.dom.__=(m,e,e2,e3)=>
 'afterBegin.beforeEnd.beforeBegin.afterEnd'.split('.').forEach(m=>_[m]=(e,e2,e3)=>_.dom.__(m,e,e2,e3))
 
 //_______________________test
-	//* _.afterBegin||beforeEnd||beforeBegin||afterEnd.(targets,elements||0,code)  
+	//* _.afterBegin||beforeEnd||beforeBegin||afterEnd.(targets,elements,code)  
 
 _.dom._('#dom')
 

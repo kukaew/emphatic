@@ -11,15 +11,14 @@ _.event=(f,el,t,kc,ek)=>el?el.forEach(e=>!e||t.matches(e)?!kc||kc==ek?f():0:0):!
 	//* _.event(function,element,keyCode)
 	//* this=_.this
 
-const
-	f=e=>document.getElementById('list').innerText+=(e||_.this.value||'ok!')+' . . . '
-	,add=()=>_.this.insertAdjacentHTML('beforeBegin',_.this.previousElementSibling.outerHTML)
+const func=e=>document.getElementById('list').innerText+=(e||_.this.value||'ok!')+' . . . '
 
-_.change(f)
-_.click(add,'.add')
-_.load(()=>f('HELLO!'))
-_.click(()=>f('CLICK!'),'button')
-_.keypress(()=>f('ENTER:'),'.inp',13) // press enter in input
-_.mouseover(e=>f('MOUSEOVER!'),'.mov')
+_.input(func)
+_.contextmenu(func)
+_.load(()=>func('HELLO!'))
+_.click(()=>func('CLICK!'),'button')
+_.keypress(()=>func('ENTER:'),'.inp',13) // press enter in input
+_.mouseover(()=>func('MOUSEOVER!'),'.mov')
+_.click(()=>_.this.insertAdjacentHTML('beforeBegin',_.this.previousElementSibling.outerHTML),'.add')
 
 console.log(_)
