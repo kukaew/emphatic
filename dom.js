@@ -4,7 +4,7 @@ let _={}
 
 //_______________________code
 
-_.dom={},_.dom._=el=>document.querySelectorAll(el+'>*').forEach((e,n)=>_.dom[e.getAttribute('_')||'_'+(n)]=e
+_.dom={},_.dom._=el=>document.querySelectorAll(el+'>*').forEach((e,n)=>_.dom[e.getAttribute('_')||'_'+(n)]=e)
 _.dom.__=(m,e,e2,e3)=>
 	typeof e=='object'
 		?typeof e2=='object'||e3
